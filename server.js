@@ -29,7 +29,7 @@ const User = bookshelf.Model.extend({
 });
 
 
-app.get('/', (req, res) => res.sendFile(path.resolve('./public', 'index.html')));
+app.get('/', (req, res) => res.sendFile(path.resolve('./dist', 'index.html')));
 
 app.get('/users', (req, res) => {
   knex.select()
