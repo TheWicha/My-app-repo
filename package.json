@@ -1,0 +1,28 @@
+{
+  "name": "web_app",
+  "version": "1.0.0",
+  "description": "My app",
+  "author": "Daniel Wisniewski",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start-app:dev": "nodemon server.js",
+    "start:dev": "docker-compose up -d && npm run start-app:dev",
+    "migration:create": "knex migrate:make"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bookshelf": "^0.14.2",
+    "express": "^4.16.1",
+    "express-react-views": "^0.11.0",
+    "knex": "^0.16.3",
+    "pg": "^7.7.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "redis": "2.8.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.9"
+  }
+}
