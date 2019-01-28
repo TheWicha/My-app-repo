@@ -6,9 +6,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "start-app:dev": "nodemon server.js",
-    "start:dev": "docker-compose up -d && npm run start-app:dev",
-    "migration:create": "knex migrate:make"
+    "start:dev": "nodemon server.js",
+    "migration:create": "knex migrate:make",
+    "build": "webpack --config webpack.config.js",
+    "build:watch": "webpack --config webpack.config.js --watch"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -16,13 +17,22 @@
     "express": "^4.16.1",
     "express-react-views": "^0.11.0",
     "knex": "^0.16.3",
+    "lodash": "^4.17.11",
     "pg": "^7.7.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "redis": "2.8.0"
+    "redis": "2.8.0",
+    "webpack": "^4.29.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
     "dotenv": "^6.2.0",
-    "nodemon": "^1.18.9"
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.9",
+    "webpack-cli": "^3.2.1"
   }
 }
