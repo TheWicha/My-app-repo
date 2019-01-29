@@ -1,0 +1,9 @@
+.navbar {
+    background-color: #00C1B1;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link {
+    color: white;
+    padding: 20px;
+}
