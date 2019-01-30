@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import NavItem from '../NavItem';
 import NavLink from '../NavLink';
+import NavLogo from '../NavLogo';
+
 
 
 class Header extends React.Component {
@@ -13,6 +15,9 @@ class Header extends React.Component {
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">New Post</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLogo />
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">About Us</NavLink>
