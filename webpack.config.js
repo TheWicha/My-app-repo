@@ -12,7 +12,6 @@ module.exports = {
   module: {
     rules: [
       {
-        // Transpiles ES6-8 into ES5
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -22,7 +21,18 @@ module.exports = {
       {
         test: /\.html$/,
         use: [{loader: "html-loader"}]
-      }
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: path.join(__dirname, 'dist/images'),
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [
