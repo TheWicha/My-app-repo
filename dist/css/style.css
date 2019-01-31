@@ -10,7 +10,7 @@ body {
     background-color: #F4F4F4;
     min-height: 42px;
 }
-.navbar-link-wrapper{
+.navbar-link-wrapper {
     position: relative;
     padding: 10.5px 21px;
     margin: 0 auto;
@@ -24,4 +24,27 @@ body {
     text-decoration: none;
     margin: 0 21px 0 0;
     font-size: 14px;
+}
+
+.inner-header {
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    padding: 21px;
+    margin: 0 auto;
+    max-width: 1138px;
+}
+
+.logo-img {
+    width: 95px;
+    height: 95px;
+    margin: 0;
+}
+
+.logo-text-img {
+    height: 95px;
+    width: 440px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
