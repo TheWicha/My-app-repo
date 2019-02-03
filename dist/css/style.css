@@ -10,6 +10,7 @@ body {
     background-color: #F4F4F4;
     min-height: 42px;
 }
+
 .navbar-link-wrapper {
     position: relative;
     padding: 10.5px 21px;
@@ -23,7 +24,7 @@ body {
     color: #292420;
     text-decoration: none;
     margin: 0 21px 0 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .inner-header {
@@ -35,6 +36,7 @@ body {
     margin: 0 auto;
     max-width: 1250px;
 }
+
 .inner-header-logo {
     display: flex;
 }
@@ -92,6 +94,15 @@ body {
 .search-form input:hover{
     border: 1px solid #AE2C24;
 }
+
 .search-form input:focus{
     border: 1px solid #AE2C24;
+}
+
+.slider {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 420px;
+    width: 100%;
 }
