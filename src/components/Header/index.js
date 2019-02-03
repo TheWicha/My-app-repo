@@ -3,9 +3,11 @@ import Navbar from '../Navbar';
 import NavLink from '../NavLink';
 import InnerHeader from '../InnerHeader';
 import HeaderLogo from '../HeaderLogo';
-import HeaderSearch from '../HeaderSearch'
+import HeaderSearch from '../HeaderSearch';
+import Slider from '../Slider'
 import logoImg from '../../images/logo-mark.svg'
 import logoText from '../../images/logo-text.svg'
+import sliderImg from '../../images/food1.jpg'
 
 
 
@@ -22,6 +24,7 @@ class Header extends React.Component {
                   <HeaderLogo src={logoImg} src2={logoText} />
                   <HeaderSearch />
                 </InnerHeader>
+                <Slider sliderImg={sliderImg}/>
              </div>
     }
   }
