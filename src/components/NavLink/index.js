@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 
 
 class NavLink extends React.Component {
-    render() {
-      return <div className='nav-link'>
-        <a href={this.props.href}> {this.props.children} </a>
-      </div>
+
+  constructor() {
+    super();
+    this.state = {
+      links: ['home', 'about', 'recipe index', 'recipe search'],
     }
+
   }
- 
+
+  render() {
+    let links = this.state.links
+
+    return <div className='nav-link'>
+              <div className='navbar-link-wrapper'>
+                {links.map(link => <a href={this.props.href}>{link}</a>)}
+              </div>
+    </div>
+  }
+}
+
 export default NavLink;

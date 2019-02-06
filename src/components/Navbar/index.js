@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-
+import NavLink from '../NavLink';
+import NavSocial from '../NavSocial';
 
 class Navbar extends React.Component {
     render() {
-      return <div className='navbar'>
-                <div className='navbar-link-wrapper'>{this.props.children}</div>
-            </div>
+          return <div className='navbar'>
+                  <div className='nav-container'>
+                        <NavLink href='#'/>
+                        <NavSocial  />
+                  </div>
+                </div>
     }
   }
  
