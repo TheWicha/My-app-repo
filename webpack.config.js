@@ -28,7 +28,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: path.join(__dirname, 'dist/images'),
+              name: '[name].[ext]',
+              outputPath: '../images',
             },
           },
         ],

@@ -5,22 +5,20 @@ import HeaderLogo from '../HeaderLogo';
 import HeaderSearch from '../HeaderSearch';
 import Slider from '../Slider'
 import SliderBox from '../SliderBox'
-import logoImg from '../../images/logo-mark.svg'
-import logoText from '../../images/logo-text.svg'
-import sliderImg from '../../images/food1.jpg'
+
 
 
 class Header extends React.Component {
   render() {
     return <div className='header'>
-      <Navbar />
-      <InnerHeader>
-        <HeaderLogo src={logoImg} src2={logoText} />
-        <HeaderSearch />
-      </InnerHeader>
-      <Slider sliderImg={sliderImg}>
-        <SliderBox />
-      </Slider>
+              <Navbar />
+              <InnerHeader>
+                <HeaderLogo />
+                <HeaderSearch />
+              </InnerHeader>
+              <Slider>
+                <SliderBox />
+              </Slider>
     </div>
   }
 }
