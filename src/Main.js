@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import Header from './components/Header' 
+import PostList from './components/PostList';
+import PostTile from './components/PostTile';
 
 
 class Main  extends React.Component {
     render() {
       return <div className="main-page-layout">
                 <Header />
-                <div className='main-content'>
-                  <div className='categories'></div>
-                  <div className='latest'></div>
-                </div>
-                <div className='footer'></div>
+                <PostList> 
+                  <PostTile />
+                  <PostTile />
+                  <PostTile />
+                  <PostTile />
+                  <PostTile />
+                  <PostTile />
+                </PostList>
              </div>
     }
   }
