@@ -12,8 +12,8 @@ class PostList  extends React.Component {
     }
   }
 
-  fetchData = (shouldThrow) =>{
-    return fetch(`http://localhost:8080/posts${shouldThrow ? '?error=true' : ''}`)
+  fetchData = () =>{
+    return fetch('http://localhost:8080/posts')
     .then(response => {
       if(response.ok) {
         return response.json()
@@ -21,7 +21,7 @@ class PostList  extends React.Component {
         throw Error('somthing went wrong');
       }
     })
-    .then(posts => this.setState({ posts, isLoading: false }))
+    .then(posts => this.setState({ posts, isLoading: false, error: null, }))
     .catch(error => this.setState({ error, isLoading: false }))
   };
 
