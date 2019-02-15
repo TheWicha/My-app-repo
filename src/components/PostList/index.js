@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PostTile from '../PostTile';
 
-
-
 class PostList  extends React.Component {
 
   constructor(props) {
@@ -14,8 +12,8 @@ class PostList  extends React.Component {
     }
   }
 
-  fetchData = () =>{
-    return fetch('http://localhost:8080/posts')
+  fetchData = (shouldThrow) =>{
+    return fetch(`http://localhost:8080/posts${shouldThrow ? 'error=true : ''}`)
     .then(response => {
       if(response.ok) {
         return response.json()
@@ -30,7 +28,7 @@ class PostList  extends React.Component {
   componentDidMount() {
 
     this.setState({ isLoading: true });
-    this.fetchData()
+    this.fetchData(true)
  }
 
   render() {
@@ -40,7 +38,7 @@ class PostList  extends React.Component {
       return (
       <div className="error"> 
         <p className='error-msg'>{error.message}</p>
-        <p>Please <a onClick={this.fetchData}>try again</a></p>
+        <p className='error-click'onClick={this.fetchData}>Please try again</p>
 
       </div>)
     }

@@ -349,7 +349,7 @@ h2 {
     color: red;
 }
 
-.error a {
+.error-click {
 text-decoration: underline;
 cursor: pointer;
 }

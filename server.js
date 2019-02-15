@@ -45,6 +45,10 @@ app.get('/users/:id', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
+  if(req.query.error === 'true') {
+    res.status(500).send('Something broke!')
+    return
+  }
   knex.select()
       .from('posts')
       .then(posts => res.send(posts))
