@@ -28,7 +28,7 @@ class PostList  extends React.Component {
   componentDidMount() {
 
     this.setState({ isLoading: true });
-    this.fetchData(true)
+    this.fetchData()
  }
 
   render() {
