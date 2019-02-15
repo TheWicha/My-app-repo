@@ -13,7 +13,7 @@ class PostList  extends React.Component {
   }
 
   fetchData = (shouldThrow) =>{
-    return fetch(`http://localhost:8080/posts${shouldThrow ? 'error=true : ''}`)
+    return fetch(`http://localhost:8080/posts${shouldThrow ? '?error=true' : ''}`)
     .then(response => {
       if(response.ok) {
         return response.json()
