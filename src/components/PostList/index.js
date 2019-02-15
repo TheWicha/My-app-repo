@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostTile from '../PostTile';
+const url = 'http://localhost:8080/posts';
 
 class PostList  extends React.Component {
 
@@ -12,21 +13,22 @@ class PostList  extends React.Component {
     }
   }
 
-  fetchData = () =>{
-    return fetch('http://localhost:8080/posts')
-    .then(response => {
-      if(response.ok) {
-        return response.json()
-      } else {
-        throw Error('somthing went wrong');
-      }
-    })
-    .then(posts => this.setState({ posts, isLoading: false, error: null, }))
-    .catch(error => this.setState({ error, isLoading: false }))
+  fetchData = () => {
+    return ( 
+      fetch(url)
+      .then(response => {
+        if(response.ok) {
+          return response.json()
+        } else {
+          throw Error('somthing went wrong');
+        }
+      })
+      .then(posts => this.setState({ posts, isLoading: false, error: null }))
+      .catch(error => this.setState({ error, isLoading: false })) 
+    )
   };
 
   componentDidMount() {
-
     this.setState({ isLoading: true });
     this.fetchData()
  }
@@ -36,22 +38,24 @@ class PostList  extends React.Component {
 
     if(error) {
       return (
-      <div className="error"> 
-        <p className='error-msg'>{error.message}</p>
-        <p className='error-click'onClick={this.fetchData}>Please try again</p>
-
-      </div>)
+        <div className="error"> 
+          <p className='error-msg'>{error.message}</p>
+          <p className='error-click' onClick={this.fetchData}>Please try again</p>
+        </div>
+      )
     }
     
     if(isLoading) {
-      return <div className="load-wrapp">
+      return (
+        <div className="load-wrapp">
           <div className="load-1">
-              <p>Loading...</p>
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
+            <p>Loading...</p>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
           </div>
         </div>
+      )
     }
 
     return (
