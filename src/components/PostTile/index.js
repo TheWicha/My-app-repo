@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import '../../images/Valentines-Day-HERO.jpg'
 
 
-class PostTile  extends React.Component {
+
+
+class PostTile extends React.Component {
+    
     render() {
-      return <div className="post-tile">
+      return <div key={this.props.id} className="post-tile">
                 <div className='post-content-wrapper'>    
                     <div className="post-image">
                         <a href="#">
@@ -13,19 +16,18 @@ class PostTile  extends React.Component {
                     </div>
                     <a className ="post-author-link" href="#">
                         <div className="post-author">
-                            Summer Miller
+                            {this.props.author}
                         </div>
                     </a>
                     <h2 className="post-title-link">
                         <a href="#">
-                            <span>Valentine’s Day Menu for a Date-Night In</span>
+                            <span>{this.props.title}</span>
                         </a>
                     </h2>
                     <div className='post-content'>
-                        Who's staying in for Valentine's Day?! We've got your whole menu ready to go. 
-                        Choose from these great recipes and
+                        {this.props.content}
                     </div>
-                    <a className="post-btn-link" href="#">
+                    <a className="post-btn-link" href='#'>
                         <button className="post-btn">Get the recipe</button>
                     </a>
                 </div>    
@@ -34,9 +36,3 @@ class PostTile  extends React.Component {
   }
  
 export default PostTile;
-
-
-
-<div className="postTile"> 
-
-</div>

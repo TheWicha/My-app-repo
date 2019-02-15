@@ -12,7 +12,7 @@ class NavLink extends React.Component {
   }
 
   render() {
-    let links = this.state.links
+    const { links } = this.state
 
     return <div className='nav-link'>
               <div className='navbar-link-wrapper'>
