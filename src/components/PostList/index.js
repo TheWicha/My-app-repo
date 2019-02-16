@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import PostTile from '../PostTile';
+import LoadBox from './LoadBox';
+import ErrorBox from './ErrorBox';
 const url = 'http://localhost:8080/posts';
 
 class PostList  extends React.Component {
@@ -13,49 +16,41 @@ class PostList  extends React.Component {
     }
   }
 
-  fetchData = () => {
-    return ( 
-      fetch(url)
-      .then(response => {
-        if(response.ok) {
-          return response.json()
-        } else {
-          throw Error('somthing went wrong');
-        }
-      })
-      .then(posts => this.setState({ posts, isLoading: false, error: null }))
-      .catch(error => this.setState({ error, isLoading: false })) 
-    )
-  };
-
-  componentDidMount() {
+getPosts = async () => {
     this.setState({ isLoading: true });
-    this.fetchData()
+
+    try {
+      const posts = await axios.get(url);
+
+      this.setState({
+        posts: posts.data, 
+        isLoading: false, 
+        error: null 
+      });
+    } catch(error) { 
+      this.setState({ 
+      error, 
+      isLoading: false 
+    })
+  }
+}
+
+componentDidMount() {
+    this.getPosts()
  }
 
   render() {
     const { posts, isLoading, error } = this.state
 
     if(error) {
-      return (
-        <div className="error"> 
-          <p className='error-msg'>{error.message}</p>
-          <p className='error-click' onClick={this.fetchData}>Please try again</p>
-        </div>
-      )
+      return <ErrorBox 
+                error={error}
+                getPosts={this.getPosts}
+            />
     }
     
     if(isLoading) {
-      return (
-        <div className="load-wrapp">
-          <div className="load-1">
-            <p>Loading...</p>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-        </div>
-      )
+      return <LoadBox />
     }
 
     return (
@@ -81,9 +76,3 @@ class PostList  extends React.Component {
 }
  
 export default PostList;
-
-
-
-
-
-
