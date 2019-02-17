@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import links from './links'
 
 
 class NavLink extends React.Component {
@@ -6,9 +7,8 @@ class NavLink extends React.Component {
   constructor() {
     super();
     this.state = {
-      links: ['home', 'about', 'recipe index', 'recipe search'],
+      links: links
     }
-
   }
 
   render() {
@@ -16,7 +16,7 @@ class NavLink extends React.Component {
 
     return <div className='nav-link'>
               <div className='navbar-link-wrapper'>
-                {links.map(link => <a href={this.props.href}>{link}</a>)}
+                {links.map(link => <a href={link.href}>{link.name}</a>)}
               </div>
     </div>
   }
