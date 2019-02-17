@@ -84,7 +84,7 @@ body {
     background-image: url('/images/icon-twitter-hover.svg')
 }
 
-.nav-link a {
+.nav-link a, .footer-links a {
     text-transform: lowercase;
     color: #292420;
     text-decoration: none;
@@ -352,4 +352,49 @@ h2 {
 .error-click {
 text-decoration: underline;
 cursor: pointer;
+}
+
+.footer-container {
+    background: #F4F4F4
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 13px;
+    padding: 21px;
+}
+
+.footer-logo {
+    margin: 0 auto;
+    padding: 0 0 21px;
+}
+
+.footer-logo img {
+    width: 50px;
+}
+
+.footer-info {
+    font-weight: 700;
+    font-size: 15px;
+}
+.footer-company {
+    text-transform: uppercase;
+}
+.footer-links {
+    padding-top: 15px;
+}
+
+.footer-info a, .footer-links a {
+    text-decoration: none;
+}
+
+.footer-info a:visited, .footer-links a:visited {
+    color: #292420;
+}
+.footer-info a:hover, .footer-links a:hover {
+    text-decoration: underline
 }
