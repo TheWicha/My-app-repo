@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavLink from '../NavLink';
+import NavbarLinks from '../NavbarLinks';
 import NavSocial from '../NavSocial';
 
 class Navbar extends React.Component {
   render() {
     return <div className='navbar'>
       <div className='nav-container'>
-        <NavLink />
+        <NavbarLinks />
         <NavSocial />
       </div>
     </div>
