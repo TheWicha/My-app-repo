@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import links from './links'
+import { NavLink} from "react-router-dom";
 
-
-class NavLink extends React.Component {
+class NavbarLinks extends React.Component {
 
   constructor() {
     super();
@@ -16,10 +16,10 @@ class NavLink extends React.Component {
 
     return <div className='nav-link'>
               <div className='navbar-link-wrapper'>
-                {links.map(link => <a href={link.href}>{link.name}</a>)}
+                {links.map(link => <NavLink exact to={link.href}>{link.name}</NavLink>)}                   
               </div>
     </div>
   }
 }
 
-export default NavLink;
+export default NavbarLinks;

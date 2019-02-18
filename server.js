@@ -8,12 +8,12 @@ const bookshelf = require('./bookshelf')
 const router = express.Router();
 const app = express()
 
+
 app.use(express.static(path.join(__dirname, '/dist'), router));
 
 if (process.env.NODE_ENV !== 'production'){
   require('dotenv').config()
 }
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,9 +27,6 @@ const User = bookshelf.Model.extend({
       return this.forge().query({where: {email: email}}).fetch();
     }
 });
-
-
-app.get('/', (req, res) => res.sendFile(path.resolve('./dist', 'index.html')));
 
 app.get('/users', (req, res) => {
   knex.select()
@@ -50,12 +47,14 @@ app.get('/posts', (req, res) => {
       .then(posts => res.send(posts))
 });
 
-app.get('/posts/:id', (req, res) => {
+app.get('/posts/:title', (req, res) => {
   knex.select()
       .from('posts')
-      .where('id', req.params.id)
+      .where('title', req.params.title)
       .then(post => res.send(post))
 });
+
+app.get('*', (req, res) => res.sendFile(path.resolve('./dist', 'index.html')));
 
 const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';

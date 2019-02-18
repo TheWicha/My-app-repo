@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import PostTile from '../PostTile';
+import Slider from '../Slider'
 import LoadBox from './LoadBox';
 import ErrorBox from './ErrorBox';
 const url = 'http://localhost:8080/posts';
 
-class PostList  extends React.Component {
+class Home  extends React.Component {
 
   constructor(props) {
     super(props);
@@ -54,6 +55,8 @@ componentDidMount() {
     }
 
     return (
+      <div>
+      <Slider />
       <div className="post-list-wrapper">
         <div className='post-list-header'>
           <h3>Most Recent</h3>
@@ -71,8 +74,9 @@ componentDidMount() {
           }
         </div>  
       </div>
+      </div>
     )
   }
 }
  
-export default PostList;
+export default Home;

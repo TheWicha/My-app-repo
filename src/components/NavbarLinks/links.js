@@ -1,19 +1,15 @@
 export default [
     {
       name:'home',
-      href: '#',
+      href: '/',
     },
     {
       name:'recipe index',
-      href: '#',
-    },
-    {
-      name:'recipe search',
-      href: '#',
+      href: '/recipe-index',
     },
     {
       name:'about',
-      href: '#',
+      href: '/about',
     }, 
   ]
   
