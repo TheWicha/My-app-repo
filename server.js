@@ -47,10 +47,10 @@ app.get('/posts', (req, res) => {
       .then(posts => res.send(posts))
 });
 
-app.get('/posts/:title', (req, res) => {
+app.get('/json/post/:slug', (req, res) => {
   knex.select()
       .from('posts')
-      .where('title', req.params.title)
+      .where('slug', req.params.slug)
       .then(post => res.send(post))
 });
 
