@@ -6,12 +6,15 @@ import LoadBox from './LoadBox';
 import ErrorBox from './ErrorBox';
 const url = 'http://localhost:8080/posts';
 
-class Home  extends React.Component {
+
+class Home extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      posts: [ {} ],
+      posts: [ {
+        content: ''
+      } ],
       isLoading: false,
       error: null,
     }
@@ -65,7 +68,9 @@ componentDidMount() {
           {
             posts.map(post => 
               <PostTile
-                id={post.id} 
+                thumbnail={post.thumbnail}
+                image={post.image}
+                slug={post.slug} 
                 author={post.author} 
                 title={post.title} 
                 content={post.content}
