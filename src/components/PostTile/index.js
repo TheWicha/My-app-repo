@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
-import '../../images/Valentines-Day-HERO.jpg'
+import trimm from '../../libs/trimm'
 import { NavLink } from "react-router-dom";
 
-
+const trimmWithDots = trimm('...', 250)
 
 
 class PostTile extends React.Component {
 
-    trimPostLength = post => {
-        const maxLength = 200;
-        const trimmingChars = '...'
-        const trimmedPost = (post.length > maxLength) ? post.substring(0, maxLength) : post
-        const trimmedWithNoSpace = (trimmedPost.slice(-1) == ' ') ? trimmedPost.replace(/\s*$/,'') : trimmedPost
-        
-        return `${trimmedWithNoSpace}${trimmingChars}`
-    }
 
     render() {
 
@@ -36,7 +28,7 @@ class PostTile extends React.Component {
                         </NavLink>
                     </h2>
                     <div className='post-content'>
-                        {this.trimPostLength(this.props.content)}
+                        {trimmWithDots(this.props.content)}
                     </div>
                     <NavLink className="post-btn-link" to={`/post/${this.props.slug}`}>
                         <button className="post-btn">Get the recipe</button>
