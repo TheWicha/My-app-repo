@@ -11,9 +11,9 @@ class Main  extends React.Component {
       return (
       <BrowserRouter>
         <div className="main-page-layout">
-        <Header />
-        <Content />
-        <Footer />
+          <Header />
+          <Content />
+          <Footer />
         </div>
       </BrowserRouter>
       )

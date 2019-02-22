@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-size: 15px;
     line-height: 21px;
+    color: #292420;
     font-family: "Open Sans",sans-serif
 }
 
@@ -254,7 +255,12 @@ body {
 }
 
 .post-author {
+    font-size: 13px;
+    display: flex;
     margin: 10.5px 0;
+}
+.post-author span {
+    padding: 0 3 0 0
 }
 
 .post-title-link a {
@@ -278,7 +284,7 @@ body {
 }
 
 .post-image img {
-    height: auto;
+    max-height: 260px;
     width: 100%;
     margin: 0;
     padding: 0;
