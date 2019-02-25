@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import links from './links'
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class NavbarLinks extends React.Component {
 

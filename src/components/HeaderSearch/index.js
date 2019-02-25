@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../images/icon-search.svg'
 
 
 class HeaderSearch extends React.Component {
@@ -6,7 +7,8 @@ class HeaderSearch extends React.Component {
            return <div className='inner-header-search'>
                     <form role='search' method='get' className='search-form'>
                         <label className='search-label'>Find a recipe:</label>
-                        <input type='search'></input>
+                        <input className ="s" type='search'></input>
+                        <input className="search-btn" type='submit' value="Search"></input>
                     </form>
                 </div>
     }

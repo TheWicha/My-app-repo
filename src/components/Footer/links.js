@@ -1,15 +1,15 @@
 export default [
     {
       name:'home',
-      href: '#',
+      href: '/',
     },
     {
       name:'advertise',
-      href: '#',
+      href: '/advertise',
     },
     {
       name:'privacy policy',
-      href: '#',
+      href: '/privacy-policy',
     } 
   ]
   
