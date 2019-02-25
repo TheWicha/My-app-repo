@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import '../../images/logo-mark.svg'
 import links from './links'
 
@@ -31,7 +32,7 @@ class Footer extends React.Component {
                     </div>
                 </div>
                 <div className="footer-links">
-                    {links.map(link => <a href={link.href}>{link.name}</a>)}
+                    {links.map(link => <NavLink exact to={link.href}>{link.name}</NavLink>)}
                 </div>    
             </div>
         </div>
