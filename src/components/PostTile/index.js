@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from "react-router-dom";
 import PostTileImg from './PostTileImg'
 import PostTileAuthor from './PostTileAuthor'
 import PostTileTitle from './PostTileTitle'

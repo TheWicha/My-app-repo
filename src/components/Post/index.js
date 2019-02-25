@@ -57,7 +57,7 @@ class Post extends Component {
         <h1>{post.title}</h1>
         <img src={post.image}></img>
         <div className="post-author">
-          <p>,by</p>
+          <p>by</p>
           <p>{post.author}</p>
         </div>
         <p> {post.content}</p>
