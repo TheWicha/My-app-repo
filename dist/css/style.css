@@ -145,7 +145,7 @@ body {
     text-transform: lowercase;
 }
 
-.search-form input {
+.s {
     appearance: none;
     border-radius: 0;
     font-size: 13px;
@@ -162,11 +162,11 @@ body {
     outline: none;
 }
 
-.search-form input:hover{
+.s:hover{
     border: 1px solid #AE2C24;
 }
 
-.search-form input:focus{
+.s:focus{
     border: 1px solid #AE2C24;
 }
 
@@ -244,11 +244,7 @@ body {
 }
 
 .post-author-link {
-    font-size: 11px;
     margin: 0;
-    font-weight: 700;
-    color: #F1A532;
-    text-transform: uppercase;
     padding: 0;
     text-decoration: none;
     line-height: 11px;
@@ -258,6 +254,9 @@ body {
     font-size: 13px;
     display: flex;
     margin: 10.5px 0;
+    font-weight: 700;
+    color: #F1A532;
+    text-transform: uppercase;
 }
 .post-author span {
     padding: 0 3 0 0
@@ -445,4 +444,55 @@ cursor: pointer;
     line-height: 1.3;
     letter-spacing: -.02em;
     font-family: Merriweather,"Times New Roman",serif;
+}
+
+.post {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.post .post-author{
+    margin: 0;
+}
+
+.post h1 {
+    letter-spacing: -.02em;
+    font-family: Merriweather,"Times New Roman",seri;
+    font-size: 27px;
+    padding: 0;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.post-author p {
+    padding: 0 5 0 0;
+    margin: 0;
+}
+
+.entry {
+    font-size: 17px;
+}
+
+.entry h4 {
+    color: #c8bcb1;
+    font-size: 1.1em;
+    font-weight: 700;
+    clear: left;
+    padding: .5em 0 0;
+    margin-bottom: 0;
+}
+
+.search-btn {
+    position: absolute;
+    opacity: 1;
+    top: 53px;
+    right: 30px;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    outline: 0;
+    height: 16px;
+    width: 16px;
+    text-indent: -999em;
+    background: url('/images/icon-search.svg') center no-repeat;
 }
