@@ -19,11 +19,13 @@ class Footer extends React.Component {
     return (
         <div  className="footer-container">
             <div className='footer'>
+            <NavLink exact to="/">
                 <div className='footer-logo'>        
                     <div className='footer-logo-img'>
                         <img src="/images/logo-mark.svg"></img>
                     </div>
                 </div>
+            </NavLink>
                 <div className="footer-info">
                     <div className="footer-site-name">
                         <span className="footer-company">©2003-2019 My-app Recipes</span>
