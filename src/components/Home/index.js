@@ -8,6 +8,7 @@ const url = 'http://localhost:8080/posts';
 
 
 class Home extends React.Component {
+  
 
   constructor(props) {
     super(props);
@@ -42,10 +43,12 @@ getPosts = async () => {
 componentDidMount() {
     this.getPosts()
  }
+ 
 
   render() {
+    
     const { posts, isLoading, error } = this.state
-
+    
     if(error) {
       return <ErrorBox 
                 error={error}
@@ -83,5 +86,5 @@ componentDidMount() {
     )
   }
 }
- 
+
 export default Home;
