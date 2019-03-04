@@ -4,7 +4,7 @@ import PostTile from '../PostTile';
 import Slider from '../Slider'
 import LoadBox from './LoadBox';
 import ErrorBox from './ErrorBox';
-const url = 'http://localhost:8080/posts';
+const url = 'http://localhost:8080/json/posts';
 
 
 class Home extends React.Component {

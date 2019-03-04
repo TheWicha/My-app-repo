@@ -31,11 +31,3 @@ exports.up = function(knex) {
 exports.down = function(knex, Promise) {
     return knex.schema.dropTable('posts').dropTable('categories').dropTable('users');
 };
-
-
-//kategoria
-//nazwa kategorii
-//slug
-//id kat.
-//created at udpdated at
-//referencja posta do kategorii jak w l.18
