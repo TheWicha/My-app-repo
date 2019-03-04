@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "My app",
   "author": "Daniel Wisniewski",
-  "main": "server.js",
+  "main": "./server/server.js",
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js",
     "migration:create": "knex migrate:make",
+    "migrate:latest": "./node_modules/.bin/knex migrate:latest",
+    "seed:run": "./node_modules/.bin/knex seed:run",
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --config webpack.config.js --watch"
+    
   },
   "dependencies": {
     "@githubprimer/octicons-react": "^8.3.0",

@@ -13,7 +13,7 @@ class PostTile extends React.Component {
 
       return (
         <div key={this.props.id} className="post-tile">
-            <div className='post-content-wrapper'>    
+            <div className='post-content-wrapper'>             
                 <PostTileImg 
                     slug={this.props.slug}
                     thumbnail={this.props.thumbnail} 

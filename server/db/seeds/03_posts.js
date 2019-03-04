@@ -13,7 +13,8 @@ exports.seed = function(knex, Promise) {
           author: 'Nick Evans',
           thumbnail: 'https://www.simplyrecipes.com/wp-content/uploads/2019/01/IMG_6833-2-440x293.jpg',
           image:'https://www.simplyrecipes.com/wp-content/uploads/2019/01/IMG_6790-2-600x860.jpg',
-          user_id: 3
+          user_id: 3,
+          category_id: 4,
         },
         {
           id: 2, 
@@ -23,7 +24,8 @@ exports.seed = function(knex, Promise) {
           author: 'Elise Bauer',
           thumbnail:'https://www.simplyrecipes.com/wp-content/uploads/2019/02/Goldfish_Chicken_Tenders_HERO00005-420x300.jpg',
           image:'https://www.simplyrecipes.com/wp-content/uploads/2019/02/Goldfish_Chicken_Tenders_HERO00004-600x840.jpg',
-          user_id: 1
+          user_id: 1,
+          category_id: 2,
         },
         {
           id: 3, 
@@ -33,7 +35,8 @@ exports.seed = function(knex, Promise) {
           author: 'John Bosniak',
           thumbnail:'https://www.simplyrecipes.com/wp-content/uploads/2018/12/Golden-Milk-LEAD-HORIZONTAL-440x293.jpg',
           image:'https://www.simplyrecipes.com/wp-content/uploads/2018/12/Golden-Milk-LEAD-VERTICAL-600x840.jpg',
-          user_id: 2
+          user_id: 2,
+          category_id: 3,
         },
         {
           id: 4, 
@@ -43,7 +46,8 @@ exports.seed = function(knex, Promise) {
           author: 'Summer Miller',
           thumbnail:'https://www.simplyrecipes.com/wp-content/uploads/2004/12/lasagna-horiz-a-2000-440x293.jpg',
           image:'https://www.simplyrecipes.com/wp-content/uploads/2004/12/lasagna-horiz-a-2000-600x400.jpg',
-          user_id: 2
+          user_id: 2,
+          category_id: 4,
         }
       ]);
     });

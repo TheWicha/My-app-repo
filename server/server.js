@@ -9,7 +9,7 @@ const router = express.Router();
 const app = express()
 
 
-app.use(express.static(path.join(__dirname, '/dist'), router));
+app.use(express.static(path.join(__dirname, '../dist'), router));
 
 if (process.env.NODE_ENV !== 'production'){
   require('dotenv').config()
@@ -19,13 +19,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-const User = bookshelf.Model.extend({
-  tableName: 'users',
-  hasTimestamps: true,
-}, {
-    byEmail: function(email) {
-      return this.forge().query({where: {email: email}}).fetch();
-    }
+// const Post = bookshelf.Model.extend({
+//   tableName: 'posts',
+//   hasTimestamps: true,
+// }, {
+//     byCategoryId: function(category_id) {
+//       return this.forge().query({where: {category_id: category_id}}).fetch();
+//     }
+// });
+
+// Post.byCategoryId('4').then(p => console.log('Tytuły posta:', p.get('title')))
+
+var Category = bookshelf.Model.extend({  
+  tableName: 'categories',
+  posts: function() {
+    return this.hasMany(Post);
+  }
+});
+
+var Post = bookshelf.Model.extend({  
+  tableName: 'posts',
+
+  categories: function() {
+      return this.belongsTo(Category);
+  },
 });
 
 app.get('/users', (req, res) => {
@@ -47,11 +64,32 @@ app.get('/posts', (req, res) => {
       .then(posts => res.send(posts))
 });
 
+app.get('/posts/categories/:slug', (req, res) => {
+
+      Category.forge().where('slug', req.params.slug).fetch({withRelated: ['posts']}).then(function(category) {
+        res.send(category.toJSON())
+      })
+});
+
 app.get('/json/post/:slug', (req, res) => {
   knex.select()
       .from('posts')
       .where('slug', req.params.slug)
       .then(post => res.send(post))
+});
+
+
+app.get('/categories', (req, res) => {
+  knex.select()
+    .from('categories')
+    .then(categories => res.send(categories))
+});
+
+app.get('/categories/:slug', (req, res) => {
+  knex.select()
+    .from('categories')
+    .where('slug', req.params.slug)
+    .then(categories => res.send(categories))
 });
 
 app.get('*', (req, res) => res.sendFile(path.resolve('./dist', 'index.html')));
