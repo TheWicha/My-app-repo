@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import PostTileImg from './PostTileImg'
-import PostTileAuthor from './PostTileAuthor'
-import PostTileTitle from './PostTileTitle'
-import PostTileContent from './PostTileContent'
-import PostTileBtn from './PostTileBtn'
+import PostTileImg from './PostTileImg';
+import PostTileAuthor from './PostTileAuthor';
+import PostTileTitle from './PostTileTitle';
+import PostTileContent from './PostTileContent';
+import PostTileBtn from './PostTileBtn';
 
 
 class PostTile extends React.Component {
-
 
     render() {
 

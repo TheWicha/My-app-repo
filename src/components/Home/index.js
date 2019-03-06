@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
 import PostTile from '../PostTile';
-import Slider from '../Slider'
+import Slider from '../Slider';
 import LoadBox from './LoadBox';
 import ErrorBox from './ErrorBox';
 const url = 'http://localhost:8080/json/posts';
