@@ -4,6 +4,7 @@ import PostTile from '../PostTile';
 import Slider from '../Slider';
 import LoadBox from './LoadBox';
 import ErrorBox from './ErrorBox';
+import CategoryMenu from '../CategoryMenu';
 const url = 'http://localhost:8080/json/posts';
 
 
@@ -63,6 +64,7 @@ componentDidMount() {
     return (
       <div>
       <Slider />
+      <CategoryMenu />
       <div className="post-list-wrapper">
         <div className='post-list-header'>
           <h3>Most Recent</h3>
