@@ -17,6 +17,7 @@ exports.up = function(knex) {
             table.increments('id').primary();
             table.string('title').notNullable();
             table.text('content', 'longtext').notNullable();
+            table.text('summary').notNullable();
             table.string('author').notNullable();
             table.string('slug').unique();
             table.string('thumbnail')
