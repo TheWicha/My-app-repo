@@ -33,10 +33,10 @@ module.exports = {
             port: process.env.DB_PORT,
             },
         migrations: {
-            directory: __dirname + '/db/migrations',
+            directory: __dirname + '/server/db/migrations',
         },
         seeds: {
-            directory: __dirname + '/db/seeds',
+            directory: __dirname + '/server/db/seeds',
         },
         pool: {
             min: 2,
