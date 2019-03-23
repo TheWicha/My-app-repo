@@ -16,7 +16,7 @@ class NavSocial extends React.Component {
       <ul className='navbar-socials-wrapper'>
         {socialLinks.map(social => 
           <li  className={`nav-social-${social.className}`}> 
-            <a href={social.link} /> 
+            <a target="_blank" href={social.link} title={`My-App recepies on ${social.className}`}/> 
           </li>)}
       </ul>
     )
