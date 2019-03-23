@@ -9,9 +9,9 @@ class CategoryMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [ {
+      categories: [{
         content: ''
-      } ],
+      }],
     }
   }
 
@@ -20,18 +20,18 @@ class CategoryMenu extends React.Component {
       const categories = await axios.get(url);
 
       this.setState({
-        categories: categories.data 
+        categories: categories.data
       });
-    } catch(error) { 
-      this.setState({ 
-      error,
-    })
+    } catch (error) {
+      this.setState({
+        error,
+      })
+    }
   }
-}
 
-componentDidMount() {
+  componentDidMount() {
     this.getCategories()
- }
+  }
 
 
   render() {
@@ -39,17 +39,17 @@ componentDidMount() {
     const { categories } = this.state;
     return (
       <div className="category-menu">
-        <div className="category-list-container"> 
-            <span className="cat-span">Categories:</span>
-            <ul className="category-list">
-                {
-                  categories.map(category => 
-                    <NavLink to={`/category/${category.slug}`}>
-                      <li><span>{ category.name }</span></li>
-                    </NavLink>
-                  )
-                }
-            </ul>
+        <div className="category-list-container">
+          <span className="cat-span">Categories:</span>
+          <ul className="category-list">
+            {
+              categories.map(category =>
+                <NavLink to={`/category/${category.slug}`}>
+                  <li><span>{category.name}</span></li>
+                </NavLink>
+              )
+            }
+          </ul>
         </div>
       </div>
     )
