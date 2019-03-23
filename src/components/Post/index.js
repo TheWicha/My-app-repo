@@ -7,51 +7,50 @@ const url = 'http://localhost:8080/json/post/';
 
 class Post extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-          post: {},
-          isLoading: false,
-          error: null,
-        }
-      }
-    
-    getPost = async () => {
-        this.setState({ isLoading: true });
-    
-        try {
-          const post = await axios.get(`${url}${this.props.match.params.slug}`);
-          this.setState({
-            
-            post: post.data[0], 
-            isLoading: false, 
-            error: null 
-          });
-        } catch(error) { 
-          this.setState({ 
-          error, 
-          isLoading: false 
-        })
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      post: {},
+      isLoading: false,
+      error: null,
     }
-    
-    componentDidMount() {
-        this.getPost()
-     }
-    
-      render() {
-        const { post, isLoading, error } = this.state
-    
-        if(error) {
-          return <ErrorBox 
-                    error={error}
-                    getPost={this.getPost}
-                />
-        }
-        
-        if(isLoading) {
-          return <LoadBox />
-        }       
+  }
+
+  getPost = async () => {
+    this.setState({ isLoading: true });
+
+    try {
+      const post = await axios.get(`${url}${this.props.match.params.slug}`);
+      this.setState({
+        post: post.data[0],
+        isLoading: false,
+        error: null
+      });
+    } catch (error) {
+      this.setState({
+        error,
+        isLoading: false
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.getPost()
+  }
+
+  render() {
+    const { post, isLoading, error } = this.state
+
+    if (error) {
+      return <ErrorBox
+        error={error}
+        getPost={this.getPost}
+      />
+    }
+
+    if (isLoading) {
+      return <LoadBox />
+    }
     return (
       <div className="post">
         <h1>{post.title}</h1>
