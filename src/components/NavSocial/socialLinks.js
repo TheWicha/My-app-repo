@@ -12,22 +12,22 @@ import '../../images/icon-twitter-hover.svg';
 export default [
     {
         className: 'facebook',
-        link: '#',
+        link: 'http://facebook.com',
     }, 
     {
         className: 'pinterest',
-        link: '#',
+        link: 'http://pinterest.com',
     },
     {
         className: 'instagram',
-        link: '#',
+        link: 'http://instagram.com',
     },
     {
         className: 'snapchat',
-        link: '#',
+        link: 'http://snapchat.com',
     },
     { 
         className: 'twitter',
-        link: '#',
+        link: 'http://twitter.com',
     }
 ]

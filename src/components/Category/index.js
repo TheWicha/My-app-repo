@@ -3,6 +3,7 @@ import axios from 'axios'
 import LoadBox from '../Home/LoadBox';
 import ErrorBox from '../Home/ErrorBox';
 import CategoryPost from "./CategoryPost";
+import CategoryMenu from "../CategoryMenu"
 const url = 'http://localhost:8080/json/categories/posts/';
 
 
@@ -36,8 +37,15 @@ class Category extends Component {
 			})
 		}
 	}
+
 	componentDidMount() {
 		this.getCategoryWithPosts()
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.location.pathname !== prevProps.location.pathname) {
+			this.getCategoryWithPosts()
+		}
 	}
 
 	render() {
@@ -55,21 +63,24 @@ class Category extends Component {
 		}
 
 		return (
-			<div className="category-post-list-container">
-				<header className="category-post-header">
-					<h1>{category.name}</h1>
-				</header>
-				<ul className='category-post-list'>
-					{
-						posts.map(post =>
-							<CategoryPost
-								slug={post.slug}
-								thumbnail={post.thumbnail}
-								title={post.title}
-								summary={post.summary}
-							/>)
-					}
-				</ul>
+			<div>
+				<CategoryMenu />
+				<div className="category-post-list-container">
+					<header className="category-post-header">
+						<h1>{category.name}</h1>
+					</header>
+					<ul className='category-post-list'>
+						{
+							posts.map(post =>
+								<CategoryPost
+									slug={post.slug}
+									thumbnail={post.thumbnail}
+									title={post.title}
+									summary={post.summary}
+								/>)
+						}
+					</ul>
+				</div>
 			</div>
 		);
 	}
