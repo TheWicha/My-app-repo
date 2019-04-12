@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import debounce from 'lodash.debounce';
+import SearchResult from './SearchResult'
 import '../../images/icon-search.svg'
 const url = 'http://localhost:8080/json/posts';
 
@@ -8,7 +10,7 @@ class HeaderSearch extends React.Component {
     super(props);
     this.state = {
       posts: [{
-        content: ''
+        title: '',
       }],
       error: null,
       query: '',
@@ -32,17 +34,18 @@ class HeaderSearch extends React.Component {
     this.setState({
       query: this.search.value
     }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          this.getPosts()
-        }
+      if (this.state.query && this.state.query.length >= 1) {
+        this.getPosts()
       }
     })
   }
 
-
-
   render() {
+    const { posts } = this.state;
+    const { query } = this.state;
+    const search = query.toLowerCase().trim()
+    const filtered = posts.filter(p => p.title.toLowerCase().match(search))
+
     return (
       <div className='inner-header-search'>
         <form className='search-form'>
@@ -51,7 +54,11 @@ class HeaderSearch extends React.Component {
             className="s"
             type='search'
             ref={input => this.search = input}
-            onChange={this.handleInputChange}></input>
+            onChange={this.handleInputChange}>
+          </input>
+          <SearchResult posts={filtered}
+                        search={search}
+          />
           <input className="search-btn" type='submit' value="Search"></input>
         </form>
       </div>)
