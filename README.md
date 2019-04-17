@@ -1,7 +1,7 @@
 # My-app-repo
 
 Welcome to My App Repo where Im creatting my prototype app
-It's simple blog page with proper setup
+It's blog page with proper setup
 Including:
   -Node
   -Express
