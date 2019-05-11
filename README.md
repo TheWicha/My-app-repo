@@ -15,29 +15,30 @@ It's a blog page, and here is my setup:<br>
 # Creating an App
 <strong> You’ll need to have Node 8.10.0 </strong> <br>
   
-  <h3>npm:</h3>
- ``` 
- npm install<br> 
- ```
+### npm:
+  
+``` 
+npm install<br> 
+```
  
- ```
- npm run start:dev
- ```
- to start server in developer mode<br>
- ```
- npm run build:watch
- ```
+```
+npm run start:dev
+```
+to start server in developer mode<br>
+```
+npm run build:watch
+```
  
- to build with webpack<br>
+to build with webpack<br>
  
- ```
- docker-compose up
- ```
+```
+docker-compose up
+```
  
- to start database<br>
+to start database<br>
  
 ``` 
- knex migrate:latest
+knex migrate:latest
 ```
 to create database table<br>
  ```
