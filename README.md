@@ -20,7 +20,7 @@ It's a blog page, and here is my setup:<br>
 ``` 
 npm install 
 ```
- <br></br>
+ <br>
 ```
 npm run start:dev
 ```
