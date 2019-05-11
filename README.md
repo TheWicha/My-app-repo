@@ -16,13 +16,28 @@ It's a blog page, and here is my setup:<br>
 <strong> You’ll need to have Node 8.10.0 </strong> <br>
   
   <h3>npm:</h3>
-  
-  `npm install`<br> 
-  `npm run start:dev` to start server in developer mode<br>
-  `npm run build:watch` to build with webpack<br>
-  `docker-compose up` to start database<br>
-  
-  `knex migrate:latest` to create database table<br>
-  `knex seed:run` to seed table with data<br>
+ ``` 
+ npm install<br> 
+ ```
+ ```
+ npm run start:dev
+ ```
+ to start server in developer mode<br>
+ ```
+ npm run build:watch 
+ ```
+ to build with webpack<br>
+ ```
+ docker-compose up
+ ```
+ ` to start database<br>
+ ``` 
+  `knex migrate:latest`
+  ```
+  to create database table<br>
+  ```
+  `knex seed:run`
+  ```
+  to seed table with data<br>
 
 Application will run on `localhost:8080`
