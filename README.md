@@ -13,7 +13,7 @@ It's a blog page, and here is my setup:<br>
   
   
 # Creating an App
-<strong> You’ll need to have Node 8.10.0 </strong> <br>
+<strong> You’ll need to have Node 8.10.0 or later</strong> <br>
   
 ### npm:
   
