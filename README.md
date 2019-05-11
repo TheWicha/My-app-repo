@@ -11,11 +11,13 @@ It's a blog page, and here is my setup:<br>
   -Docker<br>
   -Docker-compose<br>
   
-  to start download or clone repo, then <br>
-  `npm install`<br>
+  To start up application Clone or Download repository, then <br>
+  `npm install`<br> 
   `npm run start:dev` to start server in developer mode<br>
   `npm run build:watch` to build with webpack<br>
   `docker-compose up` to start database<br>
   
   `knex migrate:latest` to create database table<br>
   `knex seed:run` to seed table with data<br>
+
+Application will run on `localhost:8080`
