@@ -24,11 +24,13 @@ npm install
 ```
 npm run start:dev
 ```
+
 to start server in developer mode
 
 ```
 npm run build:watch
 ```
+
 to build with webpack
 
 ```
@@ -40,6 +42,7 @@ to start database
 ``` 
 knex migrate:latest
 ```
+
 to create database table
 
  ```
