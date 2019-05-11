@@ -11,7 +11,7 @@ It's a blog page, and here is my setup:<br>
   -Docker<br>
   -Docker-compose<br>
   
-  to start download or clone repo
+  to start download or clone repo, then <br>
   `npm install`<br>
   `npm run start:dev` to start server in developer mode<br>
   `npm run build:watch` to build with webpack<<br>
