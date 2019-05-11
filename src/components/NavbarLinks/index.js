@@ -14,11 +14,13 @@ class NavbarLinks extends React.Component {
   render() {
     const { links } = this.state
 
-    return <div className='nav-link'>
-              <div className='navbar-link-wrapper'>
-                {links.map(link => <NavLink exact to={link.href}>{link.name}</NavLink>)}                   
-              </div>
-    </div>
+    return (
+      <div className='nav-link'>
+        <div className='navbar-link-wrapper'>
+          {links.map(link => <NavLink exact to={link.href}>{link.name}</NavLink>)}
+        </div>
+      </div>
+    )
   }
 }
 
