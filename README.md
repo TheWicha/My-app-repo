@@ -24,26 +24,30 @@ npm install<br>
 ```
 npm run start:dev
 ```
-to start server in developer mode<br>
+to start server in developer mode
+<br>
 ```
 npm run build:watch
 ```
- <br>
-to build with webpack<br>
+to build with webpack
+<br>
  
 ```
 docker-compose up
 ```
  
-to start database<br>
+to start database
+<br>
  
 ``` 
 knex migrate:latest
 ```
-to create database table<br>
+to create database table
+<br>
  ```
  knex seed:run
  ```
- to seed table with data<br>
+ to seed table with data
+ <br>
 
 Application will run on `localhost:8080`
