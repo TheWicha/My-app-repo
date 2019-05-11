@@ -11,6 +11,8 @@ It's a blog page, and here is my setup:<br>
   -Docker<br>
   -Docker-compose<br>
   
+  
+  <head> Creating an App </head>
   To start up application Clone or Download repository, then <br>
   `npm install`<br> 
   `npm run start:dev` to start server in developer mode<br>
